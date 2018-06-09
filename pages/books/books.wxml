@@ -1,0 +1,32 @@
+<view class="bookshelf">
+  <scroll-view scroll-x class="container">
+    <view class='bookcontainer'>
+      <view class="book">
+        <image src="/images/vue.js.jpg" mode="aspectFit" />
+        <text class="name">Vue.js 实战</text>
+        <text class="author">作者: 梁灏 </text>
+        <text class="press">出版社: 清华大学出版社</text>
+        <text class="pubdate">出版年: 2017-10-1</text>
+        <view class="pages-price">
+          <text class="pages">页数: 330</text>
+          <text class="price">定价: 79.00元</text>
+        </view>
+      </view>
+      <view class="index">1</view>
+    </view>
+    <view class='bookcontainer'>
+      <view class="book">
+        <image src="/images/javascript.jpg" />
+        <text class="name">JavaScript高级程序设计（第3版）</text>
+        <text class="author">作者:  [美] 尼古拉斯·泽卡斯 </text>
+        <text class="press">出版社: 人民邮电出版社</text>
+        <text class="pubdate">出版年: 2012-3-29</text>
+        <view class="pages-price">
+          <text class="pages">页数: 748</text>
+          <text class="price">定价: 99.00元</text>
+        </view>
+      </view>
+      <view class="index">2</view>
+    </view>
+  </scroll-view>
+</view>

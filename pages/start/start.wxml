@@ -1,0 +1,19 @@
+<view class="container">
+    <view class="remind-box" wx:if="{{remind}}">
+        <image class="remind-img" src="/images/more/loading.gif" />
+    </view>
+    <block wx:else>
+        <view class="content">
+            <view>
+                <open-data type="userAvatarUrl" lang="en" class="logo" />
+            </view>
+            <view class="hello">
+                <text>欢迎</text>
+                <open-data type="userNickName" lang="en" class="motto"/>
+            </view>
+            <view class="confirm-btn" bindtap='goToIndex'>
+                <text >进入闲书</text>
+            </view>
+        </view>
+    </block>
+</view>

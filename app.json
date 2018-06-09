@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/start/start",
+    "pages/user/user",
+    "pages/scan/scan",
+    "pages/books/books",
+    "pages/sellbook/sellbook",
+    "pages/buybook/buybook",
+    "pages/typeIn/typeIn"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "闲书",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/books/books",
+        "text": "书架"
+      },
+      {
+        "pagePath": "pages/scan/scan",
+        "text": "扫码"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ],
+    "selectedColor": "red",
+    "color": "#999",
+    "backgroundColor": "white"
+  }
+}

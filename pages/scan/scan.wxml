@@ -1,0 +1,12 @@
+<view class="header">
+  <view class="scanImage">
+    <image src='../../images/scan.png'></image>
+  </view>
+  <text class='tips'>扫描书籍背后的ISBN条形码</text>
+</view>
+<view class='scaner'>
+  <view class='scanCircle' bindtap='getISBN'>
+    <text>扫一扫</text>
+  </view>
+  <text class='handin' bindtap='toCheckInBook'>手动录入</text>
+</view>

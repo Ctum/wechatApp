@@ -1,0 +1,6 @@
+/* pages/typeIn/typeIn.wxss */
+input{
+    border-top: 1rpx solid #DCDFE6;
+    border-bottom: 1rpx solid #DCDFE6;
+    height: 64rpx;
+}

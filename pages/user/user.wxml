@@ -1,0 +1,42 @@
+<!-- pages/user/user.wxml -->
+<view class="container">
+  <view class="userInfo">
+    <view>
+      <image src='{{userInfo.avatarUrl}}' class="avatar"></image>
+    </view>
+    <view class="info">
+      <view class="nickname">{{userInfo.nickName}}</view>
+      <view class="region">{{userInfo.country + ' '+userInfo.province + ' '+userInfo.city}}</view>
+    </view>
+  </view>
+  <view class="about-book">
+    <view class="book-account">
+      <view class="info-box">
+        <view class="total">2</view>
+        <text>书籍</text>
+      </view>
+    </view>
+    <view class="book-account">
+      <view class="info-box">
+        <view class="sell">1</view>
+        <text>在卖</text>
+      </view>
+    </view>
+  </view>
+  <view class="sell-box">
+    <view class="sellold">
+      <image src="/images/qd.png" />
+      <view class="box-list" bindtap="sellbook">
+        <view style="margin-left:10rpx;">卖旧书</view>
+        <image src="/images/arrow-right.png" class="arrow" />
+      </view>
+    </view>
+    <view class="sellold">
+      <image src="/images/icon-cart.png" />
+      <view class="box-list1" bindtap="buybook">
+        <view style="margin-left:10rpx;">买旧书</view>
+        <image src="/images/arrow-right.png" class="arrow" />
+      </view>
+    </view>
+  </view>
+</view>
