@@ -21,10 +21,10 @@ Page({
       }
     }
     console.log('this.data.books')
+    console.log(books)
     this.setData({
       books: books
     })
-    onsole.log(this.data.books)
   },
   goToIndex: function() {
     wx.switchTab({

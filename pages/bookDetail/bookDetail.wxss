@@ -72,6 +72,7 @@
 .info{
     color: #67C23A;
     font-size: 30rpx;
+    align-self: flex-end;
 }
 .add{
     line-height: 85rpx;

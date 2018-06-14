@@ -13,22 +13,26 @@ Page({
     caFull: false,
     isbn: ''
   },
-
+  onLoad: function(options){
+    this.setData({
+      isbn: options.isbn
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onShow: function () {
     var that = this
     wx.showLoading({
       title: '加载中',
     })
-    this.setData({
-      isbn: options.isbn
-    })
-    console.log(options)
-    let URL = 'https://douban.uieee.com/v2/book/isbn/' + options.isbn
+    // this.setData({
+    //   isbn: options.isbn
+    // })
+    // console.log(options)
+    let URL = 'https://douban.uieee.com/v2/book/isbn/' + this.data.isbn
     // let URL = 'https://douban.uieee.com/v2/book/isbn/' + '9787506365437'
-    console.log(URL)
+    // console.log(URL)
     wx.request({
       url: URL,
       header: {
@@ -59,6 +63,8 @@ Page({
     for(i=0; i<10;i++){
       let key = 'book' + i
       let value = wx.getStorageSync(key)
+      console.log(key)
+      console.log(value)
       if(!value) {
         let book = {
           'image': that.data.bookInfo.images.medium,
@@ -85,7 +91,7 @@ Page({
         wx.showToast({
           title: '已在书架'
         })
-        break;
+        continue;
       }
     }
   },
