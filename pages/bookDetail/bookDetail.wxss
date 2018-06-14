@@ -1,0 +1,84 @@
+/* pages/bookDetail/bookDetail.wxss */
+.book{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bookimage{
+    background-color: #c0c4cc;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10rpx;
+    padding-bottom: 30rpx;
+}
+.bookInfo{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30rpx;
+    width: 100%;
+    color: #909399;
+    font-size: 24rpx;
+    position: relative;
+}
+.name{
+    margin: 32rpx;
+    font-size: 40rpx;
+    color: #303133;
+    font-weight: bold;
+}
+.author, .press, .pubdate, .pages, .price{
+    margin-left: 32rpx;
+}
+.rate{
+    position: absolute;
+    right: 62rpx;
+    top: 62rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16rpx 32rpx;
+    box-shadow: 0 0 20rpx 2rpx #909399;
+}
+.rating{
+    font-size: 40rpx;
+    color: #303133;
+    font-weight: bold;
+}
+.line{
+    margin: 32rpx 0;
+    width: 650rpx;
+    border-top: 1rpx solid #ebeef5;
+}
+.summary, .catalog{
+    width: 650rpx;
+    display: flex;
+    flex-direction: column;
+}
+.text-body{
+  height: 190rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:4;
+}
+.title{
+    color: #909399;
+    font-size: 30rpx;
+}
+.info{
+    color: #67C23A;
+    font-size: 30rpx;
+}
+.add{
+    line-height: 85rpx;
+    height: 85rpx;
+    width: 650rpx;
+    background: #409EFF;
+    color: #fff;
+    text-align: center;
+    border-radius: 10rpx;
+}

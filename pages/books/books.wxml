@@ -1,6 +1,6 @@
 <view class="bookshelf">
   <scroll-view scroll-x class="container">
-    <view class='bookcontainer'>
+     <view class='bookcontainer'>
       <view class="book">
         <image src="/images/vue.js.jpg" mode="aspectFit" />
         <text class="name">Vue.js 实战</text>
@@ -27,6 +27,20 @@
         </view>
       </view>
       <view class="index">2</view>
+    </view> 
+    <view class='bookcontainer' wx:for="{{books}}" bindtap="toDetail" data-isbn="{{item.isbn}}">
+      <view class="book">
+        <image src="{{item.image}}" mode="aspectFit" />
+        <text class="name">{{item.title}}</text>
+        <text class="author">作者:{{item.author}} </text>
+        <text class="press">出版社:{{item.publisher}}</text>
+        <text class="pubdate">出版年: {{item.pubdate}}</text>
+        <view class="pages-price">
+          <text class="pages">页数: {{item.pages}}</text>
+          <text class="price">定价: {{item.price}}</text>
+        </view>
+      </view>
+      <view class="index">{{index + 3}}</view>
     </view>
   </scroll-view>
 </view>

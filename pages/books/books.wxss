@@ -37,6 +37,8 @@
     overflow: hidden;
 }
 image{
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
     width: 350rpx;
     height: 497rpx;
 }

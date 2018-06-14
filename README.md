@@ -24,3 +24,7 @@
 > 微信开发者工具，右键选折格式化代码
 * api接口
 > [豆瓣开发者](https://developers.douban.com/)里面的图书ISBN api 接口
+> 为解决豆瓣屏蔽小程序接口的问题，寻找了别人已经做好的[反向代理](https://github.com/zce/douban-api-proxy)
+* 技术要点
+> 没有写后端，所以一些API接口通过缓存来模仿
+

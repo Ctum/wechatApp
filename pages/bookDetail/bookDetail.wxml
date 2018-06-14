@@ -1,0 +1,34 @@
+<view class="book">
+  <view class="bookimage">
+    <image src="{{bookInfo.images.small}}" mode="aspectFit" />
+  </view>
+  <view class="bookInfo">
+    <text class="name">{{bookInfo.title}}</text>
+    <text class="author">作者：{{bookInfo.author[0]}}</text>
+    <text class="press">出版社：{{bookInfo.publisher}}</text>
+    <text class="pubdate">出版日期：{{bookInfo.pubdate}}</text>
+    <text class="pages">页数: {{bookInfo.pages}}</text>
+    <text class="price">定价: {{bookInfo.price}}</text>
+    <view class="rate">
+       <text>豆瓣评分</text>
+       <text class="rating">{{bookInfo.rating.average}}</text>
+       <text>{{bookInfo.rating.numRaters}}人</text> 
+    </view>
+  </view>
+  <view class="line"></view>
+  <view class="summary">
+    <text class="title">简介</text>
+    <text class="{{!showFull ? 'text-body': ''}}">{{bookInfo.summary}}</text>
+    <text bindtap="getFull" wx:if="{{!showFull}}" class="info">展开</text>
+    <text bindtap="getFull" wx:if="{{showFull}}" class="info">收起</text>
+  </view>
+  <view class="catalog">
+    <text class="title">目录</text>
+    <!-- <text class="{{!caFull ? 'text-body': ''}}"> -->
+    <rich-text nodes="{{bookInfo.catalog}}" class="{{!caFull ? 'text-body': ''}}"></rich-text>
+    <!-- </text> -->
+    <text bindtap="getcaFull" wx:if="{{!caFull}}" class="info">展开</text>
+    <text bindtap="getcaFull" wx:if="{{caFull}}" class="info">收起</text>
+  </view>
+  <view class="add" bindtap="addTo">加入书架</view>
+</view>
