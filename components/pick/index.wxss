@@ -1,0 +1,1 @@
+picker{width:100%;min-height:28rpx;text-align:center}picker view{text-align:center}picker .pick-container{color:#495060;display:flex}picker .pick-container-value{margin-left:24rpx;min-width:90rpx;padding:2rpx;height:100%;border:1rpx solid #dddee1;border:20%}

@@ -1,2 +1,24 @@
-<!--pages/sellbook/sellbook.wxml-->
-<text>买旧书页面， 还未完善</text>
+<!-- pages/sellbook/sellbook.wxml -->
+<view wx:if="{{length}}">
+    <i-panel title="书籍列表">
+        <checkbox-group bindchange="chooseBooks">
+            <block wx:for="{{books}}" wx:key="{{index}}" class="container">
+                <checkbox class="container-check" value="{{index}}" />
+                <view class="container-describe">
+                    <image src="{{item.image}}" />
+                    <view class="header">
+                        <view class="title">{{item.title}}</view>
+                        <view class="price">定价:{{item.price}}</view>
+                        <i-pick bind:pickChange="pickChange" bookInfo="{{item}}" index="{{index}}"></i-pick>
+                        <i-input title="期望价格" placeholder="输入卖出价(两位小数)" name="{{'book' + index}}" i-class="noPadding" value="{{item.sellPrice}}" />
+                    </view>
+                </view>
+                <view class="line" />
+            </block>
+        </checkbox-group>
+    </i-panel>
+    <view class="btn-sell" bindtap="sellout">确认卖出</view>
+</view>
+<view wx:else>
+    <view class="tip">书架里还没有书哦！赶快去录入吧！</view>
+</view>

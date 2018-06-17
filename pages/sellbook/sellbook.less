@@ -1,0 +1,66 @@
+// out: sellbook.wxss, compress:true, sourceMap:false
+@import (reference)url('../../style/_base.less');
+@import (reference)url('../../style/_mixin.less');
+
+.container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &-check{
+        position: absolute;
+        top: 24rpx;
+        right: 24rpx;
+    }
+
+    &-describe{
+        display: flex;
+
+        image{
+            width: 140rpx;
+            height: 200rpx;
+            margin: 10rpx 30rpx;
+        }
+
+        .header{
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+
+            .title{
+                color: @title-color;
+            }
+
+            .price{
+                color: @text-color;
+            }
+            
+            .noPadding{
+                padding: 0;
+            }
+        }
+    }
+}
+.line{
+  border-bottom: 0.5rpx solid #e9eaec; 
+  margin-left: 30rpx; 
+}
+
+.btn-sell{
+    line-height: 85rpx;
+    height: 85rpx;
+    width: 650rpx;
+    background: #409EFF;
+    color: #fff;
+    text-align: center;
+    border-radius: 10rpx;
+    margin: 0 auto;
+    margin-top: 24rpx;
+}
+
+.tip{
+    width: 100%;
+    text-align: center;
+    margin-top: 400rpx;
+    color: @text-color;
+}

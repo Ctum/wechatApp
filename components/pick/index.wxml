@@ -1,0 +1,7 @@
+<!--components/pick/index.wxml-->
+<picker mode="selector" range="{{oldNewDegree}}" value="{{degree}}" bindchange="getDegree">
+    <view class="pick-container">
+        <view>新旧程度:</view>
+        <view class="pick-container-value">{{oldNewDegree[degree]}}</view>
+    </view>
+</picker>

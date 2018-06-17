@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/start/start",
+    "pages/sellbook/sellbook",
     "pages/bookDetail/bookDetail",
     "pages/user/user",
     "pages/scan/scan",
     "pages/books/books",
-    "pages/sellbook/sellbook",
     "pages/buybook/buybook",
     "pages/typeIn/typeIn"
   ],
