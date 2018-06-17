@@ -1,4 +1,5 @@
 // pages/bookDetail/bookDetail.js
+let getMyStorage = require('../../util/getStorage.js').getMyStorage
 Page({
 
   /**
@@ -26,10 +27,6 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    // this.setData({
-    //   isbn: options.isbn
-    // })
-    // console.log(options)
     let URL = 'https://douban.uieee.com/v2/book/isbn/' + this.data.isbn
     // let URL = 'https://douban.uieee.com/v2/book/isbn/' + '9787506365437'
     // console.log(URL)
@@ -63,8 +60,6 @@ Page({
     for(i=0; i<10;i++){
       let key = 'book' + i
       let value = wx.getStorageSync(key)
-      console.log(key)
-      console.log(value)
       if(!value) {
         let book = {
           'image': that.data.bookInfo.images.medium,
@@ -88,10 +83,15 @@ Page({
         })
         break;
       } else{
-        wx.showToast({
-          title: '已在书架'
-        })
-        continue;
+        let bookStorage = getMyStorage()
+        if (bookStorage.indexOf(value) == -1){
+          wx.showToast({
+            title: '已在书架'
+          })
+          break;
+        } else{
+          continue;
+        }
       }
     }
   },

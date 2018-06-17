@@ -1,6 +1,9 @@
 /* pages/typeIn/typeIn.wxss */
-input{
-    border-top: 1rpx solid #DCDFE6;
-    border-bottom: 1rpx solid #DCDFE6;
-    height: 64rpx;
+
+.submitbtn{
+  margin-top: 32rpx;
+}
+.myclass{
+  border-bottom: 0.5rpx solid #e9eaec; 
+  margin-left: 30rpx; 
 }

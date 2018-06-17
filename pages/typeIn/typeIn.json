@@ -1,3 +1,7 @@
 {
-  "navigationBarTitleText": "手动录入"
+  "navigationBarTitleText": "手动录入",
+  "usingComponents": {
+    "i-input": "../../components/input/input",
+    "i-panel": "../../components/panel/panel"
+  }
 }

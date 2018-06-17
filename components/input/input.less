@@ -1,0 +1,67 @@
+// out: input.wxss, compress:true, sourceMap:false
+@import (reference)url('../../style/_base.less');
+@import (reference)url('../../style/_mixin.less');
+.i-input{
+    padding: 7rpx 15rpx;
+    color: @text-color;
+
+    &-wrapped{
+        margin: 10rpx 15rpx;
+        background: #ffffff;
+
+        &::after{
+            left: 0;
+            border-width: 1rpx;
+            border-radius: 4rpx;
+        }
+    }
+
+    &-error{
+        color: @error-color;
+    }
+
+    &-title{
+        color: @text-color;
+        min-width: 160rpx;
+        padding-left: 10rpx;
+    }
+
+    &-input{
+        flex: 1;
+        line-height: 1.6;
+        padding: 4rpx 0;
+        min-height: 34rpx;
+        height: auto;
+        font-size: 24rpx;
+    }
+
+    &-placeholder{
+        font-size: @size-font-base;
+    }
+
+    &-input-right{
+        text-align: right;
+    }
+}
+.i-input .i-input-wrapped::after{
+    display: block;
+}
+
+.i-input-wrapped .i-input-error::after  {
+    border-color: @error-color;
+}
+
+.i-cell{
+    position: relative;
+    padding: 24rpx 30rpx;
+    display: flex;
+    background: #fff;
+    align-items: center;
+    line-height: 1.4;
+    font-size: @size-font-base;
+    overflow: hidden;
+
+    &-bd{
+        flex: 1;
+    }
+}
