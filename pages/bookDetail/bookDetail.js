@@ -1,5 +1,6 @@
 // pages/bookDetail/bookDetail.js
 let getMyStorage = require('../../util/getStorage.js').getMyStorage
+let judgeInArray = require('../../util/getStorage.js').judgeInArray
 Page({
 
   /**
@@ -84,9 +85,9 @@ Page({
         break;
       } else{
         let bookStorage = getMyStorage()
-        if (bookStorage.indexOf(value) == -1){
+        if (judgeInArray(bookStorage, 'isbn', that.data.isbn)){
           wx.showToast({
-            title: '已在书架'
+            title:'已在书架'
           })
           break;
         } else{

@@ -2,6 +2,9 @@
   <scroll-view scroll-x class="container">
      <view class='bookcontainer'>
       <view class="book">
+        <view class="book-on-sell">
+          示例
+        </view>
         <image src="/images/vue.js.jpg" mode="aspectFit" />
         <text class="name">Vue.js 实战</text>
         <text class="author">作者: 梁灏 </text>
@@ -16,6 +19,9 @@
     </view>
     <view class='bookcontainer'>
       <view class="book">
+        <view class="book-on-sell">
+          示例
+        </view>
         <image src="/images/javascript.jpg" />
         <text class="name">JavaScript高级程序设计（第3版）</text>
         <text class="author">作者:  [美] 尼古拉斯·泽卡斯 </text>
@@ -30,6 +36,9 @@
     </view> 
     <view class='bookcontainer' wx:for="{{books}}" bindtap="toDetail" data-isbn="{{item.isbn}}">
       <view class="book">
+        <view class="book-on-sell" wx:if="{{item.onSellBook}}">
+          <image src="/images/sale.jpg" />
+        </view>
         <image src="{{item.image}}" mode="aspectFit" />
         <text class="name">{{item.title}}</text>
         <text class="author">作者:{{item.author}} </text>

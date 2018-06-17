@@ -11,9 +11,18 @@ Page({
     length: false
   },
   onLoad: function(){
-    // let books = getStorage()
     let books = getStorage()
-    console.log(books)
+    // let books = [{
+    //   image: 'https://img1.doubanio.com/view/subject/m/public/s29009187.jpg',
+    //   isbn: '9787040431995',
+    //   price: '26.00元',
+    //   title: '中近代'
+    // }, {
+    //   image: 'https://img1.doubanio.com/view/subject/m/public/s29009187.jpg',
+    //   isbn: '9787040431995',
+    //   price: '26.00元',
+    //   title: '中近代'
+    // }]
     if (books.length != 0) {
       this.setData({
         length: true
@@ -51,13 +60,16 @@ Page({
     let sellBookArray = this.data.booksIndexArray
     let i
     for(i in sellBookArray){
+      let key = 'book' + i
+      let onSellBook = this.data.books[i]
+      onSellBook.onSellBook = true
+      wx.setStorageSync(key, onSellBook)
       let book ={}
       book['isbn'] = this.data.books[i].isbn
       book['tag'] = this.data.books[i].tag
       book['sellPrice'] = this.data.books[i].sellPrice
       sellBook.push(book)
     }
-
-    setTimeout(this.showtip, 2000)
+    setTimeout(this.showtip, 1000)
   }
 })

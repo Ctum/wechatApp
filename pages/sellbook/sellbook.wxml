@@ -2,7 +2,7 @@
 <view wx:if="{{length}}">
     <i-panel title="书籍列表">
         <checkbox-group bindchange="chooseBooks">
-            <block wx:for="{{books}}" wx:key="{{index}}" class="container">
+            <view wx:for="{{books}}" wx:key="{{index}}" class="container">
                 <checkbox class="container-check" value="{{index}}" />
                 <view class="container-describe">
                     <image src="{{item.image}}" />
@@ -14,7 +14,7 @@
                     </view>
                 </view>
                 <view class="line" />
-            </block>
+            </view>
         </checkbox-group>
     </i-panel>
     <view class="btn-sell" bindtap="sellout">确认卖出</view>

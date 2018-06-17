@@ -12,7 +12,16 @@ function getMyStorage(){
   return valueList
 }
 
+function judgeInArray(arrayToSearch, attr, value){
+  for(let i=0; i<arrayToSearch.length; i++){
+    if(arrayToSearch[i][attr] == value){
+      return true
+    }
+  }
+  return false
+}
 
 module.exports = {
-  getMyStorage: getMyStorage
+  getMyStorage: getMyStorage,
+  judgeInArray: judgeInArray
 }

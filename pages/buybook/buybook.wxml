@@ -1,2 +1,2 @@
 <!--pages/buybook/buybook.wxml-->
-<text>买旧书页面， 还未完善</text>
+<text>买旧书页面， 严重依赖后端，前端页面只有一个搜索框，然后把搜索结果展示出来</text>
