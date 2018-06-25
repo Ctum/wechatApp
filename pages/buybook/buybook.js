@@ -4,7 +4,12 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
-  
+  data: {  
   },
+  /*suo: function (e) {
+    wx.navigateTo({
+      url: '../search/search',
+    })
+  },  
+*/
 })
