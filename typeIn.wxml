@@ -1,0 +1,21 @@
+<!--pages/typeIn/typeIn.wxml-->
+<form name="bookInfo" bindsubmit="getValue">
+    <i-panel title="手动录入(*为必填选项）">
+    <i-input value="{{bookName}}"  title="*书名" name="bookName" autofocus placeholder="请输入书名"/>
+    <view class="myclass"></view>
+    <i-input value="{{author}}" title="作者"  name= "author" placeholder="请输入作者" />
+    <view class="myclass"></view>
+    <i-input value="{{pages}}" title="页数" name="pages"  placeholder="请输入页数" type="number"/>
+    <view class="myclass"></view>
+    <i-input value="{{price}}" title="定价" name="price" placeholder="请输入价格" type="digit"/>
+    <view class="myclass"></view>
+    <i-input value="{{isbn}}" title="*ISBN" name="isbn" placeholder="请输入ISBN号" type="number"/>
+    <view class="myclass"></view>
+    <i-input value="{{press}}" title="出版社" name="press" placeholder="请输入出版社" />
+    <view class="myclass"></view>
+    <i-input value="{{pubdate}}" title="出版日期" name="pubdate" placeholder="请输入出版日期" />
+    </i-panel>
+    <button class="submitbtn" type="warn" form-type="submit">
+        保存
+    </button>
+</form>

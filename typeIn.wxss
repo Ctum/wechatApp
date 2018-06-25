@@ -1,0 +1,11 @@
+/* pages/typeIn/typeIn.wxss */
+
+.submitbtn{
+  margin-top: 32rpx;
+  width: 90%;
+}
+.myclass{
+  border-bottom: 0.5rpx solid #e9eaec; 
+  margin-left: 30rpx; 
+  
+}
