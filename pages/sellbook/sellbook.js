@@ -1,5 +1,7 @@
 // pages/sellbook/sellbook.js
 let getStorage = require('../../util/getStorage').getMyStorage
+var app = getApp()
+var Bmob = app.globalData.Bmob
 Page({
 
   /**

@@ -1,5 +1,5 @@
 <!--pages/typeIn/typeIn.wxml-->
-<form name="bookInfo" bindsubmit="getValue">
+<form name="bookInfo" bindsubmit="submit">
     <i-panel title="手动录入(*为必填选项）">
     <i-input value="{{bookName}}"  title="*书名" name="bookName" autofocus placeholder="请输入书名"/>
     <view class="myclass"></view>
