@@ -1,0 +1,25 @@
+<block wx:if="{{trigger}}">
+    <form bindsubmit="userLogin" class="panel">
+            <view class="header">用户登录</view>
+            <i-input value="{{username}}" title="用户名" name="username" class="i-class" placeholder="用户名"/>
+            <view class="hairline"></view>
+            <i-input value="{{username}}" title="密码" type="password" name="password" class="i-class" placeholder="密码"/>
+            <view class="hairline"></view>
+            <button form-type="submit" class="btn">登录</button>
+            <view class="trigger" bindtap="trigger">还没注册？去注册</view>
+    </form>
+</block>
+<block wx:else>
+    <form bindsubmit="userRegister" class="panel">
+            <view class="header">用户注册</view>
+            <i-input value="{{username}}" title="用户名" name="username" placeholder="用户名"/>
+            <view class="hairline"></view>
+            <i-input value="{{email}}" title="Email" name="email" placeholder="Email"/>
+            <view class="hairline"></view>
+            <i-input value="{{paasowrd}}" title="密码" type="password" name="password" placeholder="密码"/>
+            <view class="hairline"></view>
+            <button form-type="submit" class="btn">注册</button>
+            <view class="trigger" bindtap="trigger">去登陆</view>
+    </form>
+</block>
+

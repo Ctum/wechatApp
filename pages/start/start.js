@@ -18,10 +18,6 @@ Page({
    * 生命周期函数--监听页面加载，小程序注册完成后就会调用
    */
   onLoad: function (options) {
-    var that = this
-    wx.setNavigationBarTitle({
-      title: wx.getStorageSync('mallName')
-    })
   },
 
   /**

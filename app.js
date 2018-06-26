@@ -1,10 +1,11 @@
+var Bmob = require('/util/Bmob-1.6.1.min.js')
 App({
 
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch: function () {
-    
+    Bmob.initialize('f7eafe4c4f52ba10abd04ef3eec88636', '16fb2b0d2d971881e56b4b2e34a63696')
   },
 
   /**
@@ -29,5 +30,6 @@ App({
   },
   globalData: {
     url:'https://www.easy-mock.com/mock/5b128e3c791ed91ba99b114f/api/',
+    Bmob: Bmob,
   }
 })

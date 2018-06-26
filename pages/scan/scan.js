@@ -7,6 +7,15 @@ Page({
   data: {
   
   },
+  onLoad: function(){
+    if(wx.getStorageSync('isLogin')){
+      console.log('have logined')
+    } else{
+      wx.redirectTo({
+        url: '/pages/login/login'
+      })
+    }
+  },
   toCheckInBook: function(){
     wx.navigateTo({
       url: '/pages/typeIn/typeIn',

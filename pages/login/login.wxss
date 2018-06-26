@@ -1,0 +1,35 @@
+page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+page .panel {
+  width: 100%;
+  height: 640rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 180rpx;
+  overflow: hidden;
+}
+page .panel .hairline {
+  border-bottom: 0.5rpx solid #e9eaec;
+  margin: 0 30rpx;
+}
+page .panel .header {
+  text-align: center;
+  font-size: 48rpx;
+  width: 100%;
+}
+page .panel .btn {
+  width: 70%;
+  margin-top: 48rpx;
+}
+page .panel .trigger {
+  color: lightblue;
+  text-align: right;
+  padding-right: 64rpx;
+  padding-top: 32rpx;
+}
+page .panel .i-class {
+  width: 100%;
+}
