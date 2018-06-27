@@ -13,19 +13,14 @@ Page({
     length: false
   },
   onLoad: function(){
-    let books = getStorage()
-    // let books = [{
-    //   image: 'https://img1.doubanio.com/view/subject/m/public/s29009187.jpg',
-    //   isbn: '9787040431995',
-    //   price: '26.00元',
-    //   title: '中近代'
-    // }, {
-    //   image: 'https://img1.doubanio.com/view/subject/m/public/s29009187.jpg',
-    //   isbn: '9787040431995',
-    //   price: '26.00元',
-    //   title: '中近代'
-    // }]
-    if (books.length != 0) {
+    var notsale = 0
+    let books = wx.getStorageSync('books')
+    books.forEach(element => {
+      if(!element.isSale) {
+        notsale +=1
+      }
+    })
+    if (notsale != 0) {
       this.setData({
         length: true
       })
@@ -50,28 +45,35 @@ Page({
       booksIndexArray : bookArray
     })
   },
-  showtip: function(){
-    wx.showToast({
-      title: '已提交',
-      success: () => {
-      }
-    })
-  },
   sellout: function(){
-    let sellBook = []
+    let that = this
+    let books = wx.getStorageSync('books')
     let sellBookArray = this.data.booksIndexArray
-    let i
-    for(i in sellBookArray){
-      let key = 'book' + i
-      let onSellBook = this.data.books[i]
-      onSellBook.onSellBook = true
-      wx.setStorageSync(key, onSellBook)
-      let book ={}
-      book['isbn'] = this.data.books[i].isbn
-      book['tag'] = this.data.books[i].tag
-      book['sellPrice'] = this.data.books[i].sellPrice
-      sellBook.push(book)
-    }
-    setTimeout(this.showtip, 1000)
+    sellBookArray.forEach(element => {
+      let objectId = books[element].objectId
+      const query = Bmob.Query('books')
+      query.get(objectId).then(res => {
+        res.set('isSale', true)
+        res.set('salePrice', that.data.books[element].sellPrice)
+        res.save()
+      })
+      wx.showToast({
+        title: '已卖出'
+      })
+    });
+    // console.log(sellBookArray)
+    // let i
+    // for(i in sellBookArray){
+    //   let key = 'book' + i
+    //   let onSellBook = this.data.books[i]
+    //   onSellBook.onSellBook = true
+    //   wx.setStorageSync(key, onSellBook)
+    //   let book ={}
+    //   book['isbn'] = this.data.books[i].isbn
+    //   book['tag'] = this.data.books[i].tag
+    //   book['sellPrice'] = this.data.books[i].sellPrice
+    //   sellBook.push(book)
+    // }
+    // setTimeout(this.showtip, 1000)
   }
 })

@@ -11,8 +11,9 @@ Page({
     press: '',
     pubdate: '',
     pages: '',
-    price: 34.01,
-    isbn: 0
+    price: 0,
+    isbn: 0,
+    image_path: ''
   },
   submit: function (e) {
     var that = this
@@ -45,10 +46,14 @@ Page({
           query.set('isbn', parseInt(bookinfo.isbn))
           query.set('price', parseFloat(bookinfo.price))
           query.set('press', bookinfo.press)
+          query.set('author', bookinfo.author)
+          query.set('pubdate', bookinfo.pubdate)
+          query.set('pages', bookinfo.pages)
           query.save().then(res => {
             let book_id = res.objectId
             query.get(book_id).then(res => {
               res.set('owner', pointer_id)
+              res.set('upload_image', that.data.image_path)
               res.save()
               wx.showToast({
                 title: '添加成功'
@@ -87,9 +92,19 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: [type],
       success: function (res) {
-        console.log(res);
-        _this.setData({
-          logo: res.tempFilePaths[0],
+        var tempFilePaths = res.tempFilePaths[0]
+        var file = Bmob.File('image.jpg', tempFilePaths)
+        wx.showModal({
+          title: '请等待图片上传,直到提示上传成功',
+          showCancel: false
+        })
+        file.save().then(res => {
+          _this.setData({
+            image_path: res[0]
+          })
+          wx.showToast({
+            title: '图片上传成功'
+          })
         })
       },
     })

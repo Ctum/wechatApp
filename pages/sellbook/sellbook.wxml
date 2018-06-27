@@ -5,7 +5,7 @@
             <view wx:for="{{books}}" wx:key="{{index}}" class="container">
                 <checkbox class="container-check" value="{{index}}" />
                 <view class="container-describe">
-                    <image src="{{item.image}}" />
+                    <image src="{{item.upload_image}}" />
                     <view class="header">
                         <view class="title">{{item.title}}</view>
                         <view class="price">定价:{{item.price}}</view>

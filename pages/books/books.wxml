@@ -34,15 +34,15 @@
       </view>
       <view class="index">2</view>
     </view> 
-    <view class='bookcontainer' wx:for="{{books}}" bindtap="toDetail" data-isbn="{{item.isbn}}">
+    <view class='bookcontainer' wx:for="{{books}}" wx:key="{{index}}" bindtap="toDetail" data-isbn="{{item.isbn}}">
       <view class="book">
-        <view class="book-on-sell" wx:if="{{item.onSellBook}}">
+        <view class="book-on-sell" wx:if="{{item.isSale}}">
           <image src="/images/sale.jpg" />
         </view>
-        <image src="{{item.image}}" mode="aspectFit" />
-        <text class="name">{{item.title}}</text>
+        <image src="{{item.upload_image}}" mode="aspectFit" />
+        <text class="name">{{item.bookName}}</text>
         <text class="author">作者:{{item.author}} </text>
-        <text class="press">出版社:{{item.publisher}}</text>
+        <text class="press">出版社:{{item.press}}</text>
         <text class="pubdate">出版年: {{item.pubdate}}</text>
         <view class="pages-price">
           <text class="pages">页数: {{item.pages}}</text>

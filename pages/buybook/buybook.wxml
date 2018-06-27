@@ -1,10 +1,20 @@
-<!--pages/buybook/buybook.wxml-->
-<view class='page_row' bindtap="suo">  
-  <view class="search">  
-    <view class="df search_arr">  
-      <icon class="searchcion" size='20' type='search'></icon>  
-      <input class="" focus placeholder="请输入关键字" value="{{searchValue}}"/>  
-    </view>  
-  </view>  
-  <view class='sousuo'>搜索</view>  
+<!-- pages/buybook/buybook.wxml -->
+<view class='page_row'>
+  <view class="search">
+    <view class="df search_arr">
+      <icon class="searchcion" size='20' type='search'></icon>
+      <input focus placeholder="请输入关键字" value="{{searchValue}}" bindinput="getSearchValue" />
+    </view>
+  </view>
+  <view class='sousuo' bindtap="getResult">搜索</view>
+</view>
+<view wx:for="{{books}}" wx:key="{{index}}" class="container">
+  <view class="container-describe">
+    <image src="{{item.upload_image}}" />
+    <view class="header">
+      <view class="title">{{item.bookName}}</view>
+      <view class="price">售卖价:{{item.salePrice}}</view>
+    </view>
+  </view>
+  <view class="line" />
 </view>

@@ -51,5 +51,5 @@
   width: 75px;
   height: 75px;
   z-index:2;
-  //justify-content: center;
+  justify-content: center;
 }

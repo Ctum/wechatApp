@@ -9,31 +9,26 @@ Page({
     books: []
   },
   onLoad: function(options){
+    
+  },
+  onShow: function(){
+    console.log('onshow')
+    let user_id = wx.getStorageSync('bmob')
+    user_id = user_id.split(',')
+    user_id.splice(3, 1)
+    user_id = user_id.join(',')
+    const pointer = Bmob.Pointer('_User')
+    const pointer_id = pointer.set(user_id)
     const query = Bmob.Query('books')
-    query.include('owner', '_User')
+    query.equalTo('owner', '==', pointer_id)
     query.find().then(res => {
-      console.log(res)
+      wx.setStorageSync('books', res)
     }).catch(err => {
       console.log(err)
     })
-  },
-  onShow: function(){
-    // let books = []
-    // let i = 0;
-    // for (i = 0; i < 10; i++) {
-    //   let key = 'book' + i
-    //   let value = wx.getStorageSync(key)
-    //   if (!value) {
-    //     break;
-    //   } else {
-    //     books.push(value)
-    //   }
-    // }
-    // console.log('this.data.books')
-    // console.log(books)
-    // this.setData({
-    //   books: books
-    // })
+    this.setData({
+      books: wx.getStorageSync('books')
+    })
   },
   goToIndex: function() {
     wx.switchTab({
