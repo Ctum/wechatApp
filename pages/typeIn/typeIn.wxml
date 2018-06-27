@@ -15,6 +15,15 @@
     <view class="myclass"></view>
     <i-input value="{{pubdate}}" title="出版日期" name="pubdate" placeholder="请输入出版日期" />
     </i-panel>
+  <view class="book-logos">
+    <view class="logo-title">  
+     <image  class="book-img" catchtap='chooseImageTap' src="../../images/jia2.png"></image> 
+     <image class="logoinfo" src='{{logo}}' mode="aspectFill"></image>
+    </view>
+    <view class="logo-title2">
+     <text style="color : grey"  >上传图片</text><text style="color : red">*</text> 
+     </view>
+  </view>
     <button class="submitbtn" type="warn" form-type="submit">
         保存
     </button>

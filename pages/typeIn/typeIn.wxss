@@ -1,11 +1,55 @@
 /* pages/typeIn/typeIn.wxss */
 
 .submitbtn{
-  margin-top: 32rpx;
+  margin-top: 300rpx;
   width: 90%;
 }
 .myclass{
   border-bottom: 0.5rpx solid #e9eaec; 
   margin-left: 30rpx; 
   
+}
+
+.book-logos{
+   position: absolute;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin:0;
+    padding:0;
+}
+
+.logo-title{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-title2{ 
+  position: relative;
+  display:flex;
+  justify-content: center;  
+  z-index:0;
+  margin-left:32rpx;
+}
+
+.book-img{
+  position: relative;
+  z-index:1;
+  margin-top: 32rpx;
+  width: 75px;
+  height: 75px;
+  padding-bottom: 32rpx; 
+}
+
+.logoinfo{
+  margin-left:32px;
+  margin-top:32rpx;
+  position: relative;
+  width: 75px;
+  height: 75px;
+  z-index:2;
+  //justify-content: center;
 }
