@@ -11,7 +11,7 @@ Page({
     press: '',
     pubdate: '',
     pages: '',
-    price: 34.01,
+    price: 0,
     isbn: 0
   },
   submit: function (e) {
