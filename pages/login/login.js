@@ -1,6 +1,7 @@
 // pages/login/login.js
 var app = getApp()
 var Bmob = app.globalData.Bmob
+var { storeBooksToStorage} = require('../../util/api.js')
 Page({
 
   /**
@@ -35,14 +36,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+    storeBooksToStorage()
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**

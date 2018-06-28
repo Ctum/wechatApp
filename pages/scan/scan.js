@@ -26,8 +26,6 @@ Page({
       success: (res) => {
         let ISBN = res.result
         ISBN = '/pages/bookDetail/bookDetail?isbn=' + ISBN
-        console.log('ISBN')
-        console.log(ISBN)
         wx.navigateTo({
           url: ISBN
         })

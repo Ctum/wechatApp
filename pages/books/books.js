@@ -12,20 +12,6 @@ Page({
     
   },
   onShow: function(){
-    console.log('onshow')
-    let user_id = wx.getStorageSync('bmob')
-    user_id = user_id.split(',')
-    user_id.splice(3, 1)
-    user_id = user_id.join(',')
-    const pointer = Bmob.Pointer('_User')
-    const pointer_id = pointer.set(user_id)
-    const query = Bmob.Query('books')
-    query.equalTo('owner', '==', pointer_id)
-    query.find().then(res => {
-      wx.setStorageSync('books', res)
-    }).catch(err => {
-      console.log(err)
-    })
     this.setData({
       books: wx.getStorageSync('books')
     })

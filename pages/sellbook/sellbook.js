@@ -1,5 +1,5 @@
 // pages/sellbook/sellbook.js
-let getStorage = require('../../util/getStorage').getMyStorage
+let storeBooksToStorage = require('../../util/api.js').storeBooksToStorage
 var app = getApp()
 var Bmob = app.globalData.Bmob
 Page({
@@ -13,21 +13,21 @@ Page({
     length: false
   },
   onLoad: function(){
-    var notsale = 0
-    let books = wx.getStorageSync('books')
-    books.forEach(element => {
+    var notSaleBooks = []
+    let allBooks = wx.getStorageSync('books')
+    allBooks.forEach(element => {
       if(!element.isSale) {
-        notsale +=1
+        notSaleBooks.push(element)
       }
     })
-    if (notsale != 0) {
+    this.setData({
+      books: notSaleBooks
+    })
+    if (notSaleBooks.length != 0){
       this.setData({
         length: true
       })
     }
-    this.setData({
-      books: books
-    })
   },
   pickChange: function(event) {
     let index = event.detail.index
@@ -60,6 +60,7 @@ Page({
       wx.showToast({
         title: '已卖出'
       })
+      storeBooksToStorage()
     });
     // console.log(sellBookArray)
     // let i

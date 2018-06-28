@@ -1,6 +1,7 @@
 // pages/typeIn/typeIn.js
 var app = getApp()
 var Bmob = app.globalData.Bmob
+var storeBooksToStorage = require('../../util/api.js').storeBooksToStorage
 Page({
   /**
    * 页面的初始数据
@@ -10,10 +11,11 @@ Page({
     author: '',
     press: '',
     pubdate: '',
-    pages: '',
+    pages: 0,
     price: 0,
     isbn: 0,
-    image_path: ''
+    image_path: '',
+    local_path: ''
   },
   submit: function (e) {
     var that = this
@@ -48,17 +50,19 @@ Page({
           query.set('press', bookinfo.press)
           query.set('author', bookinfo.author)
           query.set('pubdate', bookinfo.pubdate)
-          query.set('pages', bookinfo.pages)
+          query.set('pages', parseInt(bookinfo.pages))
           query.save().then(res => {
             let book_id = res.objectId
             query.get(book_id).then(res => {
               res.set('owner', pointer_id)
               res.set('upload_image', that.data.image_path)
               res.save()
+              storeBooksToStorage()
               wx.showToast({
                 title: '添加成功'
               })
             }).catch(err => {
+              console.log(err)
             wx.showToast({
               title: '添加失败'
               })
@@ -93,14 +97,19 @@ Page({
       sourceType: [type],
       success: function (res) {
         var tempFilePaths = res.tempFilePaths[0]
+        _this.setData({
+          local_path: tempFilePaths
+        })
         var file = Bmob.File('image.jpg', tempFilePaths)
         wx.showModal({
           title: '请等待图片上传,直到提示上传成功',
           showCancel: false
         })
         file.save().then(res => {
+          var pattern = new RegExp('http.*jpg')
+          var result = res[0].match(pattern)
           _this.setData({
-            image_path: res[0]
+            image_path: result[0]
           })
           wx.showToast({
             title: '图片上传成功'

@@ -1,6 +1,5 @@
 // pages/bookDetail/bookDetail.js
-let getMyStorage = require('../../util/getStorage.js').getMyStorage
-let judgeInArray = require('../../util/getStorage.js').judgeInArray
+let storeBooksToStorage = require('../../util/api.js').storeBooksToStorage
 var app = getApp()
 var Bmob = app.globalData.Bmob
 Page({
@@ -31,8 +30,6 @@ Page({
       title: '加载中',
     })
     let URL = 'https://douban.uieee.com/v2/book/isbn/' + this.data.isbn
-    // let URL = 'https://douban.uieee.com/v2/book/isbn/' + '9787506365437'
-    // console.log(URL)
     wx.request({
       url: URL,
       header: {
@@ -90,7 +87,6 @@ Page({
       'pubdate': that.data.bookInfo.pubdate,
       'pages': that.data.bookInfo.pages
     }
-    console.log(bookinfo)
     let user_id = wx.getStorageSync('bmob')
     user_id = user_id.split(',')
     user_id.splice(3, 1)
@@ -101,8 +97,8 @@ Page({
     const pointer_id = pointer.set(user_id)
     const query = Bmob.Query('books')
     const query_judge = Bmob.Query('books')
-    console.log('1')
     query_judge.equalTo('isbn', '==', parseInt(bookinfo.isbn))
+    query_judge.equalTo('owner', '==', pointer)
     query_judge.find().then(res => {
       console.log('res')
       if (res.length != 0) {
@@ -126,6 +122,7 @@ Page({
             res.set('owner', pointer_id)
             res.set('upload_image', bookinfo.image)
             res.save()
+            storeBooksToStorage()
             wx.showToast({
               title: '添加成功'
             })

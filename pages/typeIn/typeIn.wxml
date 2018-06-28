@@ -18,7 +18,7 @@
   <view class="book-logos">
     <view class="logo-title">  
      <image  class="book-img" catchtap='chooseImageTap' src="../../images/jia2.png"></image> 
-     <image class="logoinfo" src='{{logo}}' mode="aspectFill"></image>
+     <image class="logoinfo" src='{{local_path}}' mode="aspectFill"></image>
     </view>
     <view class="logo-title2">
      <text style="color : grey"  >上传图片</text><text style="color : red">*</text> 
